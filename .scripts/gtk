@@ -1,8 +1,16 @@
 #!/bin/zsh
-gcc -Wall -pedantic $(pkg-config --cflags gtk4) -Og -o "$1" "$1".c $(pkg-config --libs gtk4)
+
+if [ ! -d "$DIRECTORY" ]; then
+	mkdir bin
+	echo "Creating bin directory."
+else
+	echo "Bin directory exists."
+fi
+
+gcc -Wall -pedantic $(pkg-config --cflags gtk4) -Og -o ./bin/"$1" "$1".c $(pkg-config --libs gtk4)
 if [ $? -ne 0 ]; then
 	echo "Compile failed!"
 	exit 1
 else
-	./"$1"
+	./bin/"$1"
 fi
