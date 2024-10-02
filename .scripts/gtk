@@ -1,0 +1,8 @@
+#!/bin/zsh
+gcc -Wall -pedantic $(pkg-config --cflags gtk4) -Og -o "$1" "$1".c $(pkg-config --libs gtk4)
+if [ $? -ne 0 ]; then
+	echo "Compile failed!"
+	exit 1
+else
+	./"$1"
+fi

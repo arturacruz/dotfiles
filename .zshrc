@@ -113,3 +113,5 @@ alias config='/usr/bin/git --git-dir=/home/artur/.dotfiles/ --work-tree=/home/ar
 alias config='/usr/bin/git --git-dir=/home/artur/.dotfiles/ --work-tree=/home/artur'
 
 export PATH=$PATH:/home/artur/.spicetify
+
+export PATH=$PATH:/home/artur/.scripts/:$PATH
